@@ -4,12 +4,18 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Set base to '/' for custom domains like automatereply.com
+  // Custom domain automatereply.com is at the root
   base: '/',
-  // Ensure public folder is explicitly handled
   publicDir: 'public',
   build: {
     outDir: 'dist',
-    sourcemap: false
-  }
+    assetsDir: 'assets',
+    sourcemap: false,
+    // Ensure the index.html is processed correctly
+    rollupOptions: {
+      input: {
+        main: './index.html',
+      },
+    },
+  },
 });
