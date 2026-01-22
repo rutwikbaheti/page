@@ -1,26 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automate Reply - Multi-Channel Auto Reply Platform</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "vite": "https://esm.sh/vite@^7.3.1",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Automate Reply – Coming Soon</title>
+
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #c026d3;
+  --primary-light: #e879f9;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --card-bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f5f3ff, #fdf2f8);
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 32px 20px 60px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.logo h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.logo small {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  max-width: 720px;
+  margin: auto;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #f3e8ff;
+  color: var(--primary);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero h2 {
+  font-size: 44px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero h2 span {
+  color: var(--primary);
+}
+
+.subtitle {
+  font-size: 16px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Email form */
+.email-form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.email-form input {
+  padding: 14px 16px;
+  width: 260px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.email-form button {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  border: none;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.email-form button:hover {
+  opacity: 0.9;
+}
+
+.note {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Features */
+.features {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  padding: 26px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.feature-card .icon {
+  background: #f3e8ff;
+  color: var(--primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.feature-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .email-form {
+    flex-direction: column;
+  }
+
+  .email-form input {
+    width: 100%;
   }
 }
-</script>
+</style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+
+<body>
+<main class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-icon">⚡</div>
+      <div>
+        <h1>Automate Reply</h1>
+        <small>automatereply.com</small>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="badge">🚀 COMING SOON</span>
+
+    <h2>
+      One Platform. <span>All Your Replies.</span>
+    </h2>
+
+    <p class="subtitle">
+      The ultimate multi-channel auto-reply platform. Effortlessly manage
+      and automate conversations across Socials, Emails, and Web Chat
+      from one powerful rules-based engine.
+    </p>
+
+    <form class="email-form" onsubmit="handleSubmit(event)">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Get Early Access</button>
+    </form>
+
+    <p class="note">
+      Join our private beta group at automatereply.com
+    </p>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="feature-card">
+      <div class="icon">✏️</div>
+      <h3>Multi-Channel</h3>
+      <p>
+        Sync your Email, Instagram, WhatsApp, Web Chat and Telegram.
+        One unified automation hub to rule them all.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">⚡</div>
+      <h3>Auto-Reply</h3>
+      <p>
+        Build custom reply triggers based on your specific business rules
+        to handle FAQs instantly, 24/7.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">📊</div>
+      <h3>Smart Analytics</h3>
+      <p>
+        Track conversion rates and response performance across all
+        automated channels in real time.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Automate Reply. Smart Multi-Channel Automation.
+  </footer>
+
+</main>
+
+<script>
+function handleSubmit(event) {
+  event.preventDefault();
+  const email = event.target.querySelector("input").value;
+  alert("Thanks! We'll notify you at " + email);
+  event.target.reset();
+}
+</script>
 </body>
 </html>
