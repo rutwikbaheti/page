@@ -13,7 +13,7 @@
 <style>
 :root {
   --primary: #c026d3;
-  --primary-light: #e879f9;
+  --primary-dark: #a21caf;
   --text-dark: #0f172a;
   --text-muted: #64748b;
   --card-bg: #ffffff;
@@ -34,44 +34,58 @@ body {
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 32px 20px 60px;
+  padding: 40px 20px 70px;
 }
 
-/* Header */
-.header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-}
-
-.logo {
+/* LOGO */
+.logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 60px;
+  animation: bounce 2.5s infinite;
 }
 
 .logo-icon {
+  width: 48px;
+  height: 48px;
   background: linear-gradient(135deg, #a855f7, #ec4899);
-  color: white;
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 18px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(168, 85, 247, 0.35);
 }
 
-.logo h1 {
-  font-size: 18px;
+.logo-svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
+
+.logo-text {
+  text-align: left;
+}
+
+.logo-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.logo-subtitle {
+  font-size: 11px;
   font-weight: 600;
-}
-
-.logo small {
-  font-size: 12px;
+  letter-spacing: 0.15em;
   color: var(--text-muted);
+  margin-top: -4px;
+  display: block;
 }
 
-/* Hero */
+/* HERO */
 .hero {
   text-align: center;
-  max-width: 720px;
+  max-width: 760px;
   margin: auto;
 }
 
@@ -83,13 +97,13 @@ body {
   border-radius: 999px;
   font-size: 12px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .hero h2 {
-  font-size: 44px;
-  line-height: 1.2;
-  margin-bottom: 16px;
+  font-size: 46px;
+  line-height: 1.15;
+  margin-bottom: 18px;
 }
 
 .hero h2 span {
@@ -99,11 +113,11 @@ body {
 .subtitle {
   font-size: 16px;
   color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 30px;
+  line-height: 1.7;
+  margin-bottom: 32px;
 }
 
-/* Email form */
+/* EMAIL */
 .email-form {
   display: flex;
   justify-content: center;
@@ -114,7 +128,7 @@ body {
 .email-form input {
   padding: 14px 16px;
   width: 260px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid #e5e7eb;
   font-size: 14px;
 }
@@ -123,8 +137,8 @@ body {
   background: linear-gradient(135deg, #a855f7, #ec4899);
   border: none;
   color: white;
-  padding: 14px 20px;
-  border-radius: 10px;
+  padding: 14px 22px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -138,31 +152,39 @@ body {
   color: var(--text-muted);
 }
 
-/* Features */
-.features {
-  margin-top: 80px;
+/* FEATURES */
+.features-grid {
+  margin-top: 90px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  gap: 26px;
 }
 
 .feature-card {
   background: var(--card-bg);
-  padding: 26px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
 }
 
-.feature-card .icon {
+.feature-icon {
+  width: 42px;
+  height: 42px;
   background: #f3e8ff;
   color: var(--primary);
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 14px;
+}
+
+.feature-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
 }
 
 .feature-card h3 {
@@ -176,15 +198,21 @@ body {
   line-height: 1.6;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 90px;
   font-size: 12px;
   color: var(--text-muted);
 }
 
-/* Responsive */
+/* ANIMATION */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* RESPONSIVE */
 @media (max-width: 640px) {
   .hero h2 {
     font-size: 32px;
@@ -204,18 +232,20 @@ footer {
 <body>
 <main class="container">
 
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">
-      <div class="logo-icon">⚡</div>
-      <div>
-        <h1>Automate Reply</h1>
-        <small>automatereply.com</small>
-      </div>
+  <!-- LOGO -->
+  <div class="logo-wrapper">
+    <div class="logo-icon">
+      <svg class="logo-svg" viewBox="0 0 24 24">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+      </svg>
     </div>
-  </header>
+    <div class="logo-text">
+      <span class="logo-title">Automate Reply</span>
+      <span class="logo-subtitle">AUTOMATEREPLY.COM</span>
+    </div>
+  </div>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero">
     <span class="badge">🚀 COMING SOON</span>
 
@@ -239,10 +269,16 @@ footer {
     </p>
   </section>
 
-  <!-- Features -->
-  <section class="features">
+  <!-- FEATURES -->
+  <section class="features-grid">
+
     <div class="feature-card">
-      <div class="icon">✏️</div>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5"/>
+          <path d="M18.5 2.5a2 2 0 113 3L12 15H9v-3l9.5-9.5z"/>
+        </svg>
+      </div>
       <h3>Multi-Channel</h3>
       <p>
         Sync your Email, Instagram, WhatsApp, Web Chat and Telegram.
@@ -251,7 +287,11 @@ footer {
     </div>
 
     <div class="feature-card">
-      <div class="icon">⚡</div>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+      </div>
       <h3>Auto-Reply</h3>
       <p>
         Build custom reply triggers based on your specific business rules
@@ -260,13 +300,20 @@ footer {
     </div>
 
     <div class="feature-card">
-      <div class="icon">📊</div>
+      <div class="feature-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6"/>
+          <path d="M9 19V9a2 2 0 012-2h2a2 2 0 012 2v10"/>
+          <path d="M15 19a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
+        </svg>
+      </div>
       <h3>Smart Analytics</h3>
       <p>
         Track conversion rates and response performance across all
         automated channels in real time.
       </p>
     </div>
+
   </section>
 
   <footer>
@@ -283,5 +330,6 @@ function handleSubmit(event) {
   event.target.reset();
 }
 </script>
+
 </body>
 </html>
