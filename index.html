@@ -14,9 +14,47 @@
   rel="icon"
   type="image/svg+xml"
   href="data:image/svg+xml;utf8,
-  <svg class='logo-svg' viewBox='0 0 24 24'>
-      <path d='M13 2L3 14h9l-1 8 10-12h-9l1-8z'></path>
-</svg>"
+  <svg
+  width='64'
+  height='64'
+  viewBox='0 0 512 512'
+  xmlns='http://www.w3.org/2000/svg'
+>
+  <defs>
+    <!-- Tailwind: bg-gradient-to-tr from-purple-600 to-pink-500 -->
+    <linearGradient id='grad' x1='0%' y1='100%' x2='100%' y2='0%'>
+      <stop offset='0%' stop-color='#9333EA' />
+      <stop offset='100%' stop-color='#EC4899' />
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square -->
+  <rect
+    width='512'
+    height='512'
+    rx='96'
+    fill='url(#grad)'
+  />
+
+  <!-- Lightning bolt (slightly smaller, sharper top) -->
+  <path
+    d='
+      M300 92
+      L152 284
+      H255
+      L225 420
+      L360 246
+      H262
+      Z
+    '
+    fill='white'
+    stroke='white'
+    stroke-width='32'
+    stroke-linejoin='round'
+    stroke-linecap='round'
+  />
+</svg>
+"
 />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -247,9 +285,47 @@ footer {
   <!-- LOGO -->
   <div class="logo-wrapper">
     <div class="logo-icon">
-      <svg class="logo-svg" viewBox="0 0 24 24">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
-      </svg>
+      <svg
+  width="64"
+  height="64"
+  viewBox="0 0 512 512"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <!-- Tailwind: bg-gradient-to-tr from-purple-600 to-pink-500 -->
+    <linearGradient id="grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9333EA" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square -->
+  <rect
+    width="512"
+    height="512"
+    rx="96"
+    fill="url(#grad)"
+  />
+
+  <!-- Lightning bolt (slightly smaller, sharper top) -->
+  <path
+    d="
+      M300 92
+      L152 284
+      H255
+      L225 420
+      L360 246
+      H262
+      Z
+    "
+    fill="white"
+    stroke="white"
+    stroke-width="32"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
+</svg>
+
     </div>
     <div class="logo-text">
       <span class="logo-title">Automate Reply</span>
